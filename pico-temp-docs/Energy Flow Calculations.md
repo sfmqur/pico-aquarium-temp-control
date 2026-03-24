@@ -32,23 +32,33 @@ quick experiment to figure out ice generation over time.
 It seems that the water is chilled as well, not just ice creation.  This is good as we have a phase change and temp reduction of the water reservoir. 
 
 specific heat of water
+
 $c_w = 4.186 \frac{J}{g * C}$
+
 Latent heat of melting for water 
+
 $L_{w} = 334 \frac{J}{g}$ 
 
 to create ice we have
+
 $T_{st}$ = start temperature
+
 $T_{f}$ = final temp: start temp of next sample
+
 $m_{i}$ = ice mass created
+
 $m_{w}$ = water mass remaining
 
 The energy to make ice is 
+
 $E_{i}=c_{w}m_{i}T_{st} +L_{w}m_{i}$
 
 The energy for the water temp change is
+
 $E_{w} = c_{w}m_{w}\Delta T_{w}$
 
 Total cooling energy is
+
 $E = E_{i} + E_{w}$
 
 
