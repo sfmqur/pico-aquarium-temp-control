@@ -17,16 +17,19 @@ quick experiment to figure out ice generation over time.
 7.  jump to step 3
 
 ## data
+start mass 918g water at 55
+
+with the addition of water after step 1, where the ice maker already sucked up the 10.88C water. Then the 284g of water was added. This yielded a tank temp at start of step 2 of: 
+$(284*19.38 + 872*10.88)/{1156} = 12.96 C$
 
 | sample no | start $T_{w}$  \[C] | $\Delta t$  \[sec] | ice mass \[g] | $H_{2}O$  $\Delta  T_{w}$ \[C] | $H_{2}O$ mass left \[g] |
 | --------- | ------------------- | ------------------ | ------------- | ------------------------------ | ----------------------- |
-| 1         |                     |                    |               |                                |                         |
-| 2         |                     |                    |               |                                |                         |
-|           |                     |                    |               |                                |                         |
-|           |                     |                    |               |                                |                         |
-|           |                     |                    |               |                                |                         |
-|           |                     |                    |               |                                |                         |
-|           |                     |                    |               |                                |                         |
+| 1         | 13.27               | 495                | 46            | -2.38                          | 872                     |
+|           | add                 | water              |               | (284g 19.38C)                  |                         |
+| 2         | 10.88               | 475                | 49            | -1.35                          | 1107                    |
+| 3         | 11.61               | 518                | 50            | -1.66                          | 1057                    |
+| 4         | 9.94                | 502                | 52            | -1.27                          | 1005                    |
+| 5         | 8.66                | 520                | 54            | -0.94                          | 951                     |
 
 ## analysis
 It seems that the water is chilled as well, not just ice creation.  This is good as we have a phase change and temp reduction of the water reservoir. 
@@ -62,14 +65,13 @@ Total cooling energy is
 $E = E_{i} + E_{w}$
 
 
-| sample no | $H_{2}O$  $\Delta  T$ \[C] | $\Delta E$ \[kJ] | $P_{avg}$ \[W] |
-| --------- | -------------------------- | ---------------- | -------------- |
-|           |                            |                  |                |
-|           |                            |                  |                |
-|           |                            |                  |                |
-|           |                            |                  |                |
-|           |                            |                  |                |
-|           |                            |                  |                |
+| sample no | $E_{i}$ \[kJ] | $E_{w}$ \[kJ] | $E_{t}$ \[kJ] | $P_{avg}$ \[W] |
+| --------- | ------------- | ------------- | ------------- | -------------- |
+| 1         |               |               |               |                |
+| 2         |               |               |               |                |
+| 3         |               |               |               |                |
+| 4         |               |               |               |                |
+| 5         |               |               |               |                |
 
 ## conclusion
 
