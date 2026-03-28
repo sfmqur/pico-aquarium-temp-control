@@ -1,4 +1,4 @@
-Need to decide how feasible that this prototype is. How much energy/power can we remove from the tank.  or the cooling power of the ice maker.  This might be difficult due to the phase change, but could put a certain amouunt of room temp water into the ice maker, and measure the mass of ice creation over time. 
+Need to decide how feasible that this prototype is. How much energy/power can we remove from the tank.  or the cooling power of the ice maker.  This might be difficult due to the phase change, but could put a certain amount of room temp water into the ice maker, and measure the mass of ice creation over time. 
 
 # ice maker generation 
 need to figure out the cooling power of the ice maker
@@ -11,8 +11,8 @@ quick experiment to figure out ice generation over time.
 1. put 918 g of water into ice maker to start
 2. start the ice maker on large cubes and start stopwatch
 3. record initial water temp
-4. once the ice maker fans turn off record the time elapsed and reset the stopwatch
-5.  once the ice dumps shortly after into basket measure mass of created ice
+4. once the ice maker fans turn off, record the time elapsed and reset the stopwatch
+5.  once the ice dumps into basket, measure mass of created ice
 6. dump measured ice into sink. removing that mass from system. 
 7.  jump to step 3
 
@@ -67,16 +67,46 @@ $E = E_{i} + E_{w}$
 
 | sample no | $E_{i}$ \[kJ] | $E_{w}$ \[kJ] | $E_{t}$ \[kJ] | $P_{avg}$ \[W] |
 | --------- | ------------- | ------------- | ------------- | -------------- |
-| 1         |               |               |               |                |
-| 2         |               |               |               |                |
-| 3         |               |               |               |                |
-| 4         |               |               |               |                |
-| 5         |               |               |               |                |
+| 1         | 17.9          | 8.69          | 26.6          | 53.8           |
+| 2         | 18.6          | 6.26          | 24.9          | 52.3           |
+| 3         | 19.1          | 7.34          | 26.5          | 51.1           |
+| 4         | 19.5          | 5.34          | 24.9          | 49.6           |
+| 5         | 20.0          | 3.74          | 23.7          | 45.6           |
 
 ## conclusion
 
-
+It seems that the ice maker can only do about 50W of cooling. The one thing that this experiment doesn't consider is that the ice is left in the system. Although I don't think that matters too much,  as our goal was to establish the total cooling power of the system. 
 # calculation of heat conduction into tank. 
+use conductivity equation
+$q=(k/s)A dT$
+q = heat transfer (W, Btu/hr)
+k = thermal Conductivity of material W/k \* K
+s = material thickness (m)
+A = heat transfer area ($m^2$)
 
-## Assumptions
-- 
+$k_{glass}$ = 1.05 (@ 25C)
+$k_{air}$ = 0.0262
+s = 4.25 mm
+
+## tank area
+24Wx12.25Dx15H in
+for the 4 walls,
+A = 24x15x2+15x12.25x2 = 1087.5 $in^2$ = 0.702 $m^2$
+
+the air pocket at top of tank conducts heat 2 magnitudes slower than walls, on top of the plastic layer of 2 mm. so we will ignore that. 
+
+## energy calc
+
+$q = 173 dT$ 
+$\frac{dq}{dT} = 173 \left[ \frac{W}{K}\right]$  = $96.1 \left[ \frac{W}{F}\right]$
+This will be the energy flow into the tank based on the delta temperature. 
+
+or our ability to reduce tank temp is
+$$\frac{q_{cooling}}{96.1} = \Delta T [F]$$
+
+
+
+
+# Conclusions
+Unfortunately I don't think this will work well. As we have about 50W of cooling. This will give us about 0.5F temperature delta between the tank and the room temp. In summer it might get as warm as 75 in the upstairs. So seeing a temp delta of 5F would be good. On the other hand.  Can build an open loop version with  the cooling coil and submersible pump, and aquarium tubing for about $40.  Which is some cooling. And experimentally see what the actual temp delta is at. 
+Could also insulate the back side of the tank with something like styrofoam. Then the conduction area would be reduced much further. 
