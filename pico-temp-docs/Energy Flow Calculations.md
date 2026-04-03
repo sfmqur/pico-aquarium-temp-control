@@ -80,33 +80,49 @@ It seems that the ice maker can only do about 50W of cooling. The one thing that
 use conductivity equation
 $q=(k/s)A dT$
 q = heat transfer (W, Btu/hr)
-k = thermal Conductivity of material W/k \* K
+k = thermal Conductivity of material W/m \* K
 s = material thickness (m)
 A = heat transfer area ($m^2$)
 
-$k_{glass}$ = 1.05 (@ 25C)
+$k_{glass}$ = 1.05 (@ 25C) https://www.engineeringtoolbox.com/thermal-conductivity-d_429.html
 $k_{air}$ = 0.0262
-s = 4.25 mm
+s = 4.61 mm
 
 ## tank area
 24Wx12.25Dx15H in
 for the 4 walls,
-A = 24x15x2+15x12.25x2 = 1087.5 $in^2$ = 0.702 $m^2$
+A = 24x14x2+14x12.25x2 = 1015 $in^2$ = 0.654 $m^2$
 
 the air pocket at top of tank conducts heat 2 magnitudes slower than walls, on top of the plastic layer of 2 mm. so we will ignore that. 
 
 ## energy calc
 
 $q = 173 dT$ 
-$\frac{dq}{dT} = 173 \left[ \frac{W}{K}\right]$  = $96.1 \left[ \frac{W}{F}\right]$
+$\frac{dq}{dT} = 149 \left[ \frac{W}{K}\right]$  = $82.9\left[ \frac{W}{F}\right]$
 This will be the energy flow into the tank based on the delta temperature. 
 
 or our ability to reduce tank temp is
-$$\frac{q_{cooling}}{96.1} = \Delta T [F]$$
+$$\frac{q_{cooling}}{82.9} = \Delta T [F]$$
 
 
 
 
-# Conclusions
+# Conclusions pt 1 
 Unfortunately I don't think this will work well. As we have about 50W of cooling. This will give us about 0.5F temperature delta between the tank and the room temp. In summer it might get as warm as 75 in the upstairs. So seeing a temp delta of 5F would be good. On the other hand.  Can build an open loop version with  the cooling coil and submersible pump, and aquarium tubing for about $40.  Which is some cooling. And experimentally see what the actual temp delta is at. 
 Could also insulate the back side of the tank with something like styrofoam. Then the conduction area would be reduced much further. 
+
+
+# insulation
+we could maybe try to insulate the back layer of the tank. 
+
+$k_{styrofoam} = 0.033 \frac{W}{mK}$
+
+small enough to neglect if i do the backside,  and thickness would be 12 to 25 mm, as that is what is available. 
+
+then A = 0.438 $m^2$
+
+if i do one of the sides too, then 
+
+A = 0.327 $m^2$
+
+realistically this will get use 2/3  and 1/2 the energy efficeincy.  Still only gets us to 1F,  which is guess is something. 
